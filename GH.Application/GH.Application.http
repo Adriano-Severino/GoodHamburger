@@ -1,6 +1,0 @@
-@GH.Application_HostAddress = http://localhost:5094
-
-GET {{GH.Application_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

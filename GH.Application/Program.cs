@@ -31,21 +31,13 @@ builder.Services.AddScoped<IBaseRepository<Order>, BaseRepository<Order>>();
 builder.Services.AddScoped<IBaseRepository<Extra>, BaseRepository<Extra>>();
 builder.Services.AddScoped<IBaseRepository<Sandwich>, BaseRepository<Sandwich>>();
 builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<ISandwichExtrasService, SandwichExtrasService>();
 
 builder.Services.AddSingleton(new MapperConfiguration(config =>
 {
-    //config.CreateMap<LoginEmployeesModel, Employees>();
-    //config.CreateMap<UpdateEmployeesModel, Employees>();
     config.CreateMap<CreateOrderDto, Order>();
-    config.CreateMap<SandwichDto, Sandwich>();  // Adicione esta linha
-    config.CreateMap<ExtraDto, Extra>();  // Adicione esta linha
-    //config.CreateMap<Employees, EmployeesModel>();
-    //config.CreateMap<CreateEmployeesDto, Employees>();
-
-    //config.CreateMap<CreateProjectModel, Project>();
-    //config.CreateMap<UpdateProjectModel, Project>();
-    //config.CreateMap<Project, ProjectModel>();
-    //config.CreateMap<CreateProjectDto, Project>();
+    config.CreateMap<SandwichDto, Sandwich>();  
+    config.CreateMap<ExtraDto, Extra>();
 
 }).CreateMapper());
 

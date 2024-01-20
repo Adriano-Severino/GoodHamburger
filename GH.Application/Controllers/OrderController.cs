@@ -1,6 +1,5 @@
 ﻿using GH.Application.Helpers;
 using GH.Domain.Dto;
-using GH.Domain.Entities;
 using GH.Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -81,27 +80,6 @@ namespace GH.Application.Controllers
         public async Task<IActionResult> DeleteOrder([FromQuery] Guid id)
         {
             return await ExecuteAsync(async () => await _orderService.DeleteOrder(id));
-        }
-
-        [HttpGet()]
-        [Route("sandwiches")]
-        public async Task<IActionResult> GetSandwiches()
-        {
-            return await ExecuteAsync(async () => await _orderService.GetSandwiches());
-        }
-
-        [HttpGet()]
-        [Route("extras")]
-        public async Task<IActionResult> GetExtras()
-        {
-            return await ExecuteAsync(async () => await _orderService.GetExtras());
-        }
-
-        [HttpGet()]
-        [Route("sandwiches-extras")]
-        public async Task<IActionResult> GetSandwichesExtras()
-        {
-            return await ExecuteAsync(async () => await _orderService.GetSandwichesExtras());
         }
         private async Task<IActionResult> ExecuteAsync(Func<Task<object>> func)
         {

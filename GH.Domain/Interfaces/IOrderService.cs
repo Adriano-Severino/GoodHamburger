@@ -10,8 +10,6 @@ namespace GH.Domain.Interfaces
         public Task<ResultDto<Order>> CreateOrder(CreateOrderDto orderDto);
         public Task<ResultDto<Order>> UpdateOrder(UpdateOrderDto updateOrder);
         public Task<ResultDto<Order>> DeleteOrder(Guid id);
-        public Task<IEnumerable<ResultSandwichDto>> GetSandwiches();
-        public Task<IEnumerable<ResultExtraDto>> GetExtras();
-        public Task<ResultDto<Dictionary<string,object>>> GetSandwichesExtras();
+       
     }
 }

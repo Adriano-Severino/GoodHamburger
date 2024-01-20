@@ -1,5 +1,4 @@
 ﻿using GH.Domain.Dto;
-using GH.Domain.Entities;
 
 namespace GH.Application.Helpers
 {

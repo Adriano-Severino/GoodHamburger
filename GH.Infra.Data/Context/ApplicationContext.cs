@@ -9,7 +9,6 @@ namespace GH.Infra.Data.Context
            : base(options)
         {
         }
-
         public DbSet<Order> Order { get; set; }
 
     }
